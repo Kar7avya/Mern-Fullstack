@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #main {
+            width: 280px;
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 40px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 24px;
+            color: #262626;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            position: relative;
+            margin: 10px 0;
+        }
+        .input-group input {
+            width: 80%;
+            padding: 10px 10px 10px 40px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .input-group img {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            
+        }
+        button {
+            width: 98.573%;
+            background-color: #4268e2;
+            color: white;
+            height: 38px;
+            border: none;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        #chk, label {
+            margin: 10px 0;
+        }
+        a {
+            color: #4268e2;
+            text-decoration: none;
+            font-size: 12px;
+        }
+        #signup {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            width: 360px;
+        }
+        #signup a {
+            color: #4268e2;
+            text-decoration: none;
+        }
+        #forgot {
+            margin-left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h2>Instagram</h2>
+        <form>
+            <div class="input-group">
+                <img src="data:image/png;base64,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" alt="User Icon">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="input-group">
+                <img src="https://cdn-icons-png.flaticon.com/128/1828/1828471.png" alt="Password Icon">
+                <input type="password" placeholder="Password">
+            </div>
+            <button type="submit">Log in</button>
+            <br><br>
+            <div>
+                <input type="checkbox" id="chk">
+                <label for="chk">Remember me</label>
+                <a href="#" id="forgot">Forgot Password?</a>
+            </div>
+        </form>
+    </div>
+    <div id="signup">
+        Don't have an account? <a href="#">Sign up here</a>.
+    </div>
+</body>
+</html>
