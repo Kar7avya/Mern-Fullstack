@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td>
+            <label for="number">Number</label>
+          </td>
+          <td>
+            <input type="text" name="number" id="numb" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button" onclick="reverse()">Reverse</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="answer">Answer</label>
+          </td>
+          <td>
+            <p id="answer"></p>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      function reverse() {
+        let n = parseInt(document.getElementById("numb").value);
+        let reverse = 0;
+        
+        while (n != 0) {
+          let m = n % 10; 
+          reverse = reverse * 10 + m; 
+          n = Math.floor(n / 10); 
+        }
+
+        document.getElementById("answer").innerHTML = reverse;
+      }
+    </script>
+  </body>
+</html>
