@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>
+                    <label for="1stnumb">1st Number</label>
+                </th>
+                <td>
+                    <input type="text" name="1stnumb" id="i1">
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="2ndnumb">2nd Number</label>
+                </th>
+                <td>
+                    <input type="text" name="2ndnumb" id="i2">
+                </td>
+            </tr>
+            <tr>
+                <td><button id="button" onclick="multiply()">Multiply</button></td>
+                <td><button id="button" onclick="divide()">Divide</button></td>
+            </tr>
+            <tr>
+                <td><p id="mulans"></p></td>
+                <td><p id="divans"></p></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function multiply(){
+            let numb1=document.getElementById("i1").value;
+            let numb2=document.getElementById("i2").value;
+
+            
+
+            if(!isNaN(numb1) && !isNaN(numb2)){
+
+                let multiple=numb1*numb2;
+
+                return multiple;
+                
+            }
+
+            document.getElementById("mulans").innerHTML=multiple;
+        }
+
+        function divide(){
+            let numb1=document.getElementById("i1").value;
+            let numb2=document.getElementById("i2").value;
+
+            
+
+            if(!isNaN(numb1) && !isNaN(numb2)){
+
+                let divided=numb1/numb2;
+
+                return divided;
+                
+            }
+
+            document.getElementById("divans").innerHTML=divided;
+        }
+    </script>
+</body>
+</html>
