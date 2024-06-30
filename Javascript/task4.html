@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .alert {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="Name">Name</label>
+                </td>
+                <td>
+                    <input type="text" name="Name" id="i1">
+                </td>
+                <td>
+                    <p id="nameans"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Email">Email</label>
+                </td>
+                <td>
+                    <input type="email" name="Email" id="i2">
+                </td>
+                <td>
+                    <p id="emailans"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Website">Website</label>
+                </td>
+                <td>
+                    <input type="text" name="Website" id="i3">
+                </td>
+                <td>
+                    <p id="websiteans"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Message">Message</label>
+                </td>
+                <td colspan="4">
+                    <textarea rows="7" cols="40" id="i4"></textarea>
+                </td>
+                <td>
+                    <p id="messageans"></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <button type="button" onclick="validate()">Submit</button>
+
+    <script>
+        function validate(){
+            let nameans = document.getElementById("i1").value;
+            let emailans = document.getElementById("i2").value;
+            let websiteans = document.getElementById("i3").value;
+            let messageans = document.getElementById("i4").value;
+
+            //error check
+            let checkname = "";
+            let checkemail = "";
+            let checkwebsite = "";
+            let checkmessage = "";
+
+            if(nameans === ""){
+                checkname = `<p class="alert">This field is required</p>`;
+            }
+            if(emailans === ""){
+                checkemail = `<p class="alert">TA vallid email address is required</p>`;
+            }
+            if(websiteans === ""){
+                checkwebsite = `<p class="alert">A valid url is required</p>`;
+            }
+            if(messageans === ""){
+                checkmessage = `<p class="alert">This field is required</p>`;
+            }
+
+            document.getElementById("nameans").innerHTML = checkname;
+            document.getElementById("emailans").innerHTML = checkemail;
+            document.getElementById("websiteans").innerHTML = checkwebsite;
+            document.getElementById("messageans").innerHTML = checkmessage;
+        }
+    </script>
+</body>
+</html>
